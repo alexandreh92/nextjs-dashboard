@@ -8,6 +8,8 @@ import {
   LatestInvoicesSkeleton,
   RevenueChartSkeleton,
 } from "@/app/ui/skeletons";
+import { testAction } from "@/app/lib/actions";
+import MyButton from "@/app/ui/mybutton";
 
 export default async function Dashboard() {
   return (
@@ -29,6 +31,7 @@ export default async function Dashboard() {
           <LatestInvoices />
         </Suspense>
       </div>
+      <MyButton />
     </main>
   );
 }

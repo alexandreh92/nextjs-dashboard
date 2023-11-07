@@ -4,7 +4,7 @@ import { z } from "zod";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { signIn } from "@/auth";
+import { auth, signIn } from "@/auth";
 
 const InvoiceSchema = z.object({
   id: z.string(),
@@ -130,4 +130,8 @@ export async function authenticate(
     }
     throw error;
   }
+}
+
+export async function testAction() {
+  console.log(await auth());
 }
